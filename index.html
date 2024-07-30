@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paragon International University</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html{
+        overflow-x: hidden;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+      }
+      .navbar-nav a {
+        color: black !important;
+      }
+      .navbar-nav .active a {
+        color: orange !important;
+      }
+      .navbar .navbar-nav .nav-link {
+        color: black !important;
+      }
+      .navbar .navbar-nav .nav-item.active .nav-link {
+        color: orange !important;
+      }
+      .navbar .navbar-brand img {
+        max-height: 50px;
+      }
+      .hero {
+        background-image: url("hero.png");
+        background-size: cover;
+        background-position: center;
+        padding: 100px 20px;
+        height: 65vh;
+        text-align: center;
+      }
+      .hero h1 {
+        margin: 0;
+        font-size: 2.5em;
+        color: black;
+      }
+      .hero p {
+        margin: 0;
+        font-size: 1.2em;
+      }
+      .hero button {
+        margin-top: 20px;
+      }
+      .info-section {
+        background-color: #f8f9fa;
+        padding: 30px 0;
+      }
+      .info-section .card {
+        border: none;
+        text-align: center;
+      }
+      .info-section .card img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+      .info-section .card-title {
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+      .info-section .card-text {
+        color: #6c757d;
+      }
+      .admission-section {
+        background-image: url("bg-big.webp");
+        background-size: cover;
+        color: white;
+        font-weight: 700;
+        padding: 50px 20px;
+      }
+      .admission-section h2 {
+        font-size: 2em;
+        font-weight: 600;
+      }
+      .admission-section p {
+        font-size: 1.1em;
+      }
+      .admission-section .btn {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .news-section {
+        background-color: #fff;
+        padding: 20px;
+      }
+      .news-header {
+        margin-bottom: 20px;
+      }
+      .news-header h2 {
+        color: #003366;
+        font-weight: bold;
+      }
+      .read-all {
+        color: #ffa500;
+        font-weight: bold;
+      }
+      .news-card {
+        margin-bottom: 20px;
+      }
+      .news-card img {
+        width: 100%;
+        height: auto;
+      }
+      .news-meta {
+        font-size: 0.8rem;
+        color: #6c757d;
+      }
+      .facebook-feeds {
+        background-color: #f8f9fa;
+        padding: 20px;
+      }
+      .facebook-card {
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      .facebook-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .facebook-header img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+      .facebook-content img {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+      }
+      .section-background {
+        background-image: url("bg-main.webp");
+        background-size: cover;
+        color: black;
+        padding: 50px 0;
+        filter: brightness(90%);
+      }
+      .programs-section {
+        background-color: #002c77;
+        color: white;
+        padding: 20px 0;
+      }
+      .programs-section .card {
+        border: none;
+        background: none;
+        text-align: center;
+      }
+      .programs-section .card img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+      .programs-section .card-title {
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+      .programs-section .card-text {
+        color: #ffd700;
+      }
+      .tour-section {
+        text-align: center;
+        padding: 30px 0;
+      }
+      .tour-section h3,
+      .tour-section p {
+        color: black;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .tour-section img {
+        width: 100px;
+        margin-bottom: 10px;
+      }
+      .prospectus-section {
+        padding: 50px 0;
+      }
+      .prospectus-card {
+        position: relative;
+        color: white;
+        text-align: center;
+        padding: 50px 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        height: 300px;
+      }
+      .prospectus-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.7;
+        z-index: 0;
+      }
+      .prospectus-card h3,
+      .prospectus-card button {
+        position: relative;
+        z-index: 1;
+      }
+      .undergraduate {
+        background-image: url("bg3.webp");
+      }
+      .graduate {
+        background-image: url("bg3.webp");
+      }
+      .scholarships {
+        background-image: url("bg3.webp");
+      }
+      .international {
+        background-image: url("bg3.webp");
+      }
+      .btn-custom {
+        background-color: #ffc107;
+        border: none;
+        color: #002c77;
+        padding: 10px 20px;
+        font-weight: 600;
+        border-radius: 4px;
+      }
+
+      .event-section {
+        padding: 50px 0;
+      }
+      .event-card {
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        padding: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .event-card img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+      }
+      .event-date {
+        font-size: 2em;
+        font-weight: bold;
+        color: #ffa500;
+      }
+      .event-month {
+        font-size: 1em;
+        font-weight: bold;
+        color: #003366;
+      }
+      .event-title {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #003366;
+      }
+      .event-meta {
+        font-size: 0.9em;
+        color: #6c757d;
+        margin-bottom: 10px;
+      }
+      .subscribe-section {
+        background-color: #002c77;
+        color: white;
+        padding: 30px;
+        border-radius: 0.25rem;
+      }
+      .subscribe-section h4 {
+        margin-bottom: 20px;
+      }
+      .subscribe-section input {
+        margin-bottom: 10px;
+      }
+      .subscribe-section button {
+        width: 100%;
+      }
+      .album-section {
+        background-color: #002c77;
+        color: white;
+        padding: 50px 0;
+      }
+      .album-section h2 {
+        margin-bottom: 30px;
+      }
+      .album-card {
+        border: none;
+      }
+      .album-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.25rem;
+      }
+      .view-gallery-btn {
+        background-color: #ffc107;
+        color: #002c77;
+        font-weight: 600;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0.25rem;
+        display: inline-block;
+        margin-top: 30px;
+      }
+
+      .footer {
+        background-color: #222;
+        color: #aaa;
+        padding: 40px;
+      }
+      .footer h5 {
+        color: #fff;
+        border-bottom: 2px solid #ffc107;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        display: inline-block;
+        font-size: 10px;
+      }
+      .footer ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .footer ul li {
+        margin-bottom: 10px;
+      }
+      .footer ul li::before {
+        content: "→ ";
+        color: #ffc107;
+      }
+      .footer a {
+        color: #aaa;
+        text-decoration: none;
+        font-size: 12px;
+      }
+      .footer a:hover {
+        color: #fff;
+      }
+      .footer img {
+        max-width: 100%;
+        height: auto;
+      }
+      .footer p {
+        font-size: 12px;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 60px 20px;
+        }
+        .hero h1 {
+          font-size: 2em;
+        }
+        .hero p {
+          font-size: 1em;
+        }
+        .admission-section {
+          text-align: center;
+        }
+        .admission-section .col-md-6 {
+          margin-bottom: 20px;
+        }
+        .admission-section h2 {
+          font-size: 1.5em;
+        }
+        .admission-section p {
+          font-size: 1em;
+        }
+        .programs-section .card {
+          margin-bottom: 20px;
+        }
+        .event-card img {
+          height: auto;
+        }
+        .prospectus-card {
+          height: 250px;
+        }
+        .subscribe-section {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top White Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#topNavbar"
+          aria-controls="topNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Rector's Scholarship</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Covid-19 Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Alumni</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Jobs@Paragon.U</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-warning text-white" href="#"
+                >My.Paragon.U</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Blue Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="logo.png" alt="Paragon International University" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Paragon Students</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Prospective Students</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Academics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Admissions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Partnerships</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div
+      class="hero d-flex flex-column justify-content-center align-items-center text-center"
+    >
+      <h1>Welcome to Paragon International University</h1>
+      <p>Empowering your future with quality education</p>
+      <button class="btn btn-primary">Learn More</button>
+    </div>
+
+    <div class="container">
+      <!-- Information Section -->
+      <div class="row info-section text-center">
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <i class="fas fa-users"></i>
+              <h5 class="card-title">Student Clubs</h5>
+              <p class="card-text">Read more ...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <i class="fas fa-university"></i>
+              <h5 class="card-title">Partner Universities</h5>
+              <p class="card-text">Read more ...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <i class="fas fa-graduation-cap"></i>
+              <h5 class="card-title">Active Scholarships</h5>
+              <p class="card-text">Read more ...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <i class="fas fa-images"></i>
+              <h5 class="card-title">Gallery</h5>
+              <p class="card-text">View ...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admission Section -->
+    <div class="container-lg container-custom admission-section mt-4">
+      <div class="row">
+        <div class="col-md-6 text-light mb-4">
+          <h2>Apply for Admission</h2>
+          <p>Applications for Academic Year 2023-2024 are now open</p>
+          <p>
+            Register with us today to get an international quality education
+            with affordable fees at your doorstep. We are accepting national and
+            international applicants with a full range of backgrounds.
+          </p>
+          <button class="btn btn-warning text-white">Undergraduate</button>
+          <button class="btn btn-warning text-white">Postgraduate</button>
+          <button class="btn btn-warning text-white">International</button>
+        </div>
+        <div class="col-md-6">
+          <!-- Optional image or content on the right -->
+        </div>
+      </div>
+    </div>
+    <!-- News Section -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 news-section">
+          <div
+            class="news-header d-flex justify-content-between align-items-center"
+          >
+            <h2>News & Updates</h2>
+            <a href="#" class="read-all">Read all news</a>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="news-card">
+                <img src="news.jpeg" alt="SmartEdu Cohort" class="img-fluid" />
+                <div class="news-meta mt-2">
+                  DECEMBER 29, 2023 / CHALLENGES, COMPETITIONS, PARAGON.U,
+                  STUDENTS
+                </div>
+                <h5 class="mt-2">
+                  USDP Cohort 5 Grand Finale and Awards Ceremony
+                </h5>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="news-card d-flex mb-3">
+                <img
+                  src="news1.jpeg"
+                  alt="National Exam"
+                  class="mr-3"
+                  style="width: 100px; height: 100px"
+                />
+                <div>
+                  <div class="news-meta">
+                    NOVEMBER 19, 2023 / SCHOLARSHIPS, STUDENT, SUCCESS STORY
+                  </div>
+                  <h6>National Exam Grade-Based Scholarship</h6>
+                </div>
+              </div>
+              <div class="news-card d-flex mb-3">
+                <img
+                  src="2.webp"
+                  alt="Scholarship Exam"
+                  class="mr-3"
+                  style="width: 100px; height: 100px"
+                />
+                <div>
+                  <div class="news-meta">
+                    NOVEMBER 9, 2023 / SCHOLARSHIPS, STUDENT, SUCCESS STORY
+                  </div>
+                  <h6>Scholarship Exam 2023 Awards</h6>
+                </div>
+              </div>
+              <div class="news-card d-flex">
+                <img
+                  src="3.webp"
+                  alt="Hengsopheavan Sam"
+                  class="mr-3"
+                  style="width: 100px; height: 100px"
+                />
+                <div>
+                  <div class="news-meta">
+                    MARCH 13, 2023 / MIS, STUDENT, SUCCESS STORY
+                  </div>
+                  <h6>
+                    Hengsopheavan Sam, MIS Alumnus, and his Startups "Kong Vong"
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 facebook-feeds">
+          <h4 class="mb-4">Facebook Feeds</h4>
+          <div class="facebook-card">
+            <div class="facebook-header">
+              <img src="news.jpeg" alt="Paragon Logo" class="rounded-circle" />
+              <div>
+                <strong>Paragon International University</strong><br />
+                <small>Leading your way...</small>
+              </div>
+            </div>
+            <div class="facebook-content">
+              <p>
+                Paragon organized and hosted the "Equity Valuation and Capital
+                Structure" workshop on Saturday, 28th of October, 2023. The
+                primary objective of this event was to deliver comprehensive
+                training to participants of the CFA Research Challenge.
+              </p>
+              <img
+                src="news.jpeg"
+                alt="Workshop participants"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back-ground -->
+
+    <div class="container-fluid section-background">
+      <!-- University Info -->
+      <div class="text-center mb-5 text-white">
+        <img src="logo.png" alt="Paragon International University" />
+        <h2>About Our University</h2>
+        <p>
+          Paragon International University is among the top universities in
+          Cambodia offering Undergraduate and Graduate programs with an
+          internationally recognized curriculum.
+        </p>
+      </div>
+
+      <!-- Programs Section -->
+      <div class="container-fluid programs-section">
+        <div class="row text-center">
+          <div class="col-md-3 col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <i class="fas fa-graduation-cap fa-xl"></i>
+                <h5 class="card-title">Undergraduate Majors</h5>
+                <p class="card-text">Learn more ...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <i class="fas fa-university fa-xl"></i>
+                <h5 class="card-title">Postgraduate Programs</h5>
+                <p class="card-text">Learn more ...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <i class="fas fa-industry fa-xl"></i>
+                <h5 class="card-title">Industrial Partners</h5>
+                <p class="card-text">Learn more ...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <i class="fas fa-user-friends fa-xl"></i>
+                <h5 class="card-title">Student Services</h5>
+                <p class="card-text">Learn more ...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tour Section -->
+      <div class="container tour-section text-light">
+        <h3>Tour to Paragon.U</h3>
+        <p>Please contact us to schedule a Campus Tour.</p>
+      </div>
+    </div>
+    <!-- Prospectus Section -->
+    <div class="container-fluid prospectus-section">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="prospectus-card undergraduate">
+            <h3>Undergraduate Prospectus</h3>
+            <button class="btn btn-custom">Download</button>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="prospectus-card graduate">
+            <h3>Graduate Prospectus Programs</h3>
+            <button class="btn btn-custom">Download</button>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="prospectus-card scholarships">
+            <h3>Scholarships & Financial AID</h3>
+            <button class="btn btn-custom">Scholarships</button>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="prospectus-card international">
+            <h3>International Programs</h3>
+            <button class="btn btn-custom">ATP</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Event Section -->
+    <div class="container event-section">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>Events</h2>
+          <hr />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="event-card">
+                <img src="1.webp" alt="Event 1" />
+                <div class="event-meta">
+                  <span class="event-date">12</span>
+                  <span class="event-month">JUL</span>
+                </div>
+                <h5 class="event-title">
+                  Public Lecture: Towards an Analysis of the Cambodian Social
+                  Structure
+                </h5>
+                <p class="event-meta">
+                  <span>10:00 am - 12:00 pm</span><br />
+                  <span>Paragon International University</span>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="event-card">
+                <img src="2.webp" alt="Event 2" />
+                <div class="event-meta">
+                  <span class="event-date">08</span>
+                  <span class="event-month">JUL</span>
+                </div>
+                <h5 class="event-title">
+                  Public Lecture on Europe Election 2024
+                </h5>
+                <p class="event-meta">
+                  <span>03:00 pm - 05:00 pm</span><br />
+                  <span>Paragon International University</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="text-right d-block">View all events &rarr;</a>
+        </div>
+        <div class="col-md-4">
+          <div class="subscribe-section">
+            <h4>Subscribe To Newsletter</h4>
+            <p>Get updates to news & events</p>
+            <input type="text" class="form-control" placeholder="Your Name" />
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your Email Address*"
+            />
+            <button class="btn btn-warning text-white">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Album Section -->
+    <div class="container-fluid album-section text-center">
+      <h2>View our Album</h2>
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="album-card">
+            <img src="1.webp" alt="Album Image 1" />
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="album-card">
+            <img src="2.webp" alt="Album Image 2" />
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="album-card">
+            <img src="3.webp" alt="Album Image 3" />
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="album-card">
+            <img src="4.webp" alt="Album Image 4" />
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="album-card">
+            <img src="5.webp" alt="Album Image 5" />
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="album-card">
+            <img src="1.webp" alt="Album Image 6" />
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="album-card">
+            <img src="2.webp" alt="Album Image 7" />
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="album-card">
+            <img src="5.webp" alt="Album Image 8" />
+          </div>
+        </div>
+      </div>
+      <button class="view-gallery-btn">View all gallery</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Library</a></li>
+              <li><a href="#">Undergraduate Majors</a></li>
+              <li><a href="#">Postgraduate Programs</a></li>
+              <li><a href="#">Jobs@Paragon</a></li>
+              <li><a href="#">My.Paragon.U</a></li>
+              <li><a href="#">Tuition and Fees</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <h5>Recent Posts</h5>
+            <ul>
+              <li>
+                <a href="#">USDP Cohort 5 Grand Finale and Awards Ceremony</a>
+              </li>
+              <li><a href="#">National Exam Grade-Based Scholarship</a></li>
+              <li><a href="#">Scholarship Exam 2023 Awards</a></li>
+              <li>
+                <a href="#"
+                  >Hengsopheavan Sam, MIS Alumnus, and his Startups "Kong
+                  Vong"</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <h5>Find Us</h5>
+            <img
+              src="logo.png"
+              alt="Paragon International University Logo"
+              class="mb-3"
+            />
+            <p>
+              No. 8, St. 315,<br />Boeng Kak 1, Tuol Kork,<br />Phnom Penh,
+              Cambodia, 12151
+            </p>
+            <p>+855 23 996 111<br />+855 17 996 111<br />+855 15 996 111</p>
+            <p>info@paragoniu.edu.kh</p>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <h5>Paragon International University</h5>
+            <div id="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.5734194710176!2d104.89540667452715!3d11.582407943811567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109517bf7757d23%3A0x965c34888684bf1!2sParagon%20International%20University!5e0!3m2!1sen!2skh!4v1722314795456!5m2!1sen!2skh"
+                width="400"
+                height="200"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="text-center py-3" style="background-color: #1a1a1a">
+      <small
+        >Copyright © All Rights Reserved. 2022, PARAGON International
+        University</small
+      >
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- FontAwesome  -->
+    <script
+      src="https://kit.fontawesome.com/1f1017027a.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
